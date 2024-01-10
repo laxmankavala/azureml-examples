@@ -4,9 +4,9 @@ trigger:
 - none
 
 variables:
-  service-connection: 'machine-learning-connection' # replace with your service connection name
-  resource-group: 'machinelearning-rg' # replace with your resource group name
-  workspace: 'docs-ws' # replace with your workspace name
+  service-connection: 'mlserviceconnection' 
+  resource-group: 'ml-rg'
+  workspace: 'ml-workspace'
 
 jobs:
 - job: SubmitAzureMLJob
@@ -43,7 +43,3 @@ jobs:
 
       # Set output variable for next task
       echo "##vso[task.setvariable variable=JOB_NAME;isOutput=true;]$job_name"
-- task: AzureCLI@2
-  inputs:
-    scriptLocation: 'scriptPath'
-    scriptPath: 
